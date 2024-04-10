@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .cat-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cat {
+            width: 150px;
+            margin: 10px;
+            transition: transform 1s ease, opacity 0.5s ease;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <p>by Dakota</p>
+    </header>
+    <main>
+        <div class="cat-container">
+            <!-- Repeat this cat div 10 times -->
+            <div class="cat" id="cat1">
+                <img src="https://placekitten.com/150/150" alt="Cat">
+            </div>
+            <div class="cat" id="cat2">
+                <img src="https://placekitten.com/150/150" alt="Cat">
+            </div>
+            <div class="cat" id="cat3">
+                <img src="https://placekitten.com/150/150" alt="Cat">
+            </div>
+            <div class="cat" id="cat4">
+                <img src="https://placekitten.com/150/150" alt="Cat">
+            </div>
+            <div class="cat" id="cat5">
+                <img src="https://placekitten.com/150/150" alt="Cat">
+            </div>
+            <div class="cat" id="cat6">
+                <img src="https://placekitten.com/150/150" alt="Cat">
+            </div>
+            <div class="cat" id="cat7">
+                <img src="https://placekitten.com/150/150" alt="Cat">
+            </div>
+            <div class="cat" id="cat8">
+                <img src="https://placekitten.com/150/150" alt="Cat">
+            </div>
+            <div class="cat" id="cat9">
+                <img src="https://placekitten.com/150/150" alt="Cat">
+            </div>
+            <div class="cat" id="cat10">
+                <img src="https://placekitten.com/150/150" alt="Cat">
+            </div>
+        </div>
+        <button onclick="animateCats()">Animate Cats</button>
+    </main>
+
+    <script>
+        function animateCats() {
+            const cats = document.querySelectorAll('.cat');
+            cats.forEach(cat => {
+                // Random rotation between -180deg and 180deg
+                const rotation = Math.floor(Math.random() * 361) - 180;
+                // Random shake by toggling opacity
+                cat.style.opacity = '0.5';
+                setTimeout(() => {
+                    cat.style.opacity = '1';
+                }, 500);
+                cat.style.transform = `rotate(${rotation}deg)`;
+            });
+        }
+    </script>
+</body>
+</html>
